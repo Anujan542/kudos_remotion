@@ -1,36 +1,26 @@
-import {interpolate, Sequence, useCurrentFrame, useVideoConfig} from 'remotion';
-import {Logo} from './HelloWorld/Logo';
-import {Subtitle} from './HelloWorld/Subtitle';
-import {Title} from './HelloWorld/Title';
+import { Sequence} from 'remotion';
+import FirstLayer from './components/FirstLayer/FirstLayer';
+import AfterLogo from './components/FirstLayer/AfterLogo';
+import Main from './components/SecondLayer/Main';
+import { AfterLogo2 } from './components/FirstLayer/AfterLogo_2';
 
-export const HelloWorld = ({titleText, titleColor}) => {
-	const frame = useCurrentFrame();
-	const videoConfig = useVideoConfig();
 
-	const opacity = interpolate(
-		frame,
-		[videoConfig.durationInFrames - 25, videoConfig.durationInFrames - 15],
-		[1, 0],
-		{
-			extrapolateLeft: 'clamp',
-			extrapolateRight: 'clamp',
-		}
-	);
-	const transitionStart = 25;
+export const HelloWorld = () => {
 
 	return (
-		<div style={{flex: 1, backgroundColor: 'white'}}>
-			<div style={{opacity}}>
-				<Sequence from={0} durationInFrames={videoConfig.durationInFrames}>
-					<Logo transitionStart={transitionStart} />
-				</Sequence>
-				<Sequence from={transitionStart + 10} >
-					<Title titleText={titleText} titleColor={titleColor} />
-				</Sequence>
-				<Sequence from={transitionStart + 50} >
-					<Subtitle />
-				</Sequence>
-			</div>
+		<div style={{flex: 1, backgroundColor: 'black'}}>
+				<Sequence from={0} durationInFrames={70}  >
+					<FirstLayer  />
+			</Sequence>
+			<Sequence from={65} durationInFrames={20} >
+					<AfterLogo color="red" />
+			</Sequence>
+			<Sequence from={84} durationInFrames={26} >
+					<AfterLogo2 color="red"  />
+			</Sequence>
+			<Sequence from={105} durationInFrames={50} >
+					<Main  />
+			</Sequence>
 		</div>
 	);
 };
