@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
 
-export const AfterLogo2 = ({color}) => {
+const FirstLayerEffect2 = ({color}) => {
 	const frame = useCurrentFrame(); // 10
 	const opacity = interpolate(frame, [60, 200], [0, 4]);
 	return (
@@ -21,7 +21,7 @@ export const AfterLogo2 = ({color}) => {
 					style={{
 						backgroundColor: `${color}`,
 						height: '100%',
-						width: '10%',
+						width: '15%',
 						transform: `scale(${opacity})`,
 					}}
 				/>
@@ -39,3 +39,5 @@ export const AfterLogo2 = ({color}) => {
 		</>
 	);
 };
+
+export default FirstLayerEffect2;

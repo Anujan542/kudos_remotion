@@ -1,8 +1,8 @@
 import { Sequence} from 'remotion';
 import FirstLayer from './components/FirstLayer/FirstLayer';
-import AfterLogo from './components/FirstLayer/AfterLogo';
 import Main from './components/SecondLayer/Main';
-import { AfterLogo2 } from './components/FirstLayer/AfterLogo_2';
+import FirstLayerEffect from './components/Effects/FirstLayerEffect';
+import FirstLayerEffect2 from './components/Effects/FirstLayerEffect2';
 
 
 export const HelloWorld = () => {
@@ -13,12 +13,12 @@ export const HelloWorld = () => {
 					<FirstLayer  />
 			</Sequence>
 			<Sequence from={65} durationInFrames={20} >
-					<AfterLogo color="red" />
+					<FirstLayerEffect color="red" />
 			</Sequence>
-			<Sequence from={84} durationInFrames={26} >
-					<AfterLogo2 color="red"  />
+			<Sequence from={84} durationInFrames={30} >
+					<FirstLayerEffect2 color="red"  />
 			</Sequence>
-			<Sequence from={105} durationInFrames={50} >
+			<Sequence from={112} durationInFrames={50} >
 					<Main  />
 			</Sequence>
 		</div>
