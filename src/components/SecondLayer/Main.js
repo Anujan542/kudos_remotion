@@ -6,10 +6,12 @@ import {LogoPath} from './Logo/LogoPath';
 const Main = () => {
 	return (
 		<div>
-			<div>{/* <img src={video} /> */}</div>
 			<div>
-				<LogoPath />
+				<img src={video} />
 			</div>
+			{/* <div>
+				<LogoPath />
+			</div> */}
 		</div>
 	);
 };
