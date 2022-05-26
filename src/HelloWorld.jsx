@@ -3,6 +3,7 @@ import FirstLayer from './components/FirstLayer/FirstLayer';
 import Main from './components/SecondLayer/Main';
 import FirstLayerEffect from './components/Effects/FirstLayerEffect';
 import FirstLayerEffect2 from './components/Effects/FirstLayerEffect2';
+import UnderScorePath from './components/SecondLayer/Underscore/UnderScorePath';
 
 
 export const HelloWorld = () => {
@@ -16,10 +17,13 @@ export const HelloWorld = () => {
 					<FirstLayerEffect color="red" />
 			</Sequence>
 			<Sequence from={84} durationInFrames={30} >
-					<FirstLayerEffect2 color="red"  />
+				<FirstLayerEffect2 color="red" />
 			</Sequence>
-			<Sequence from={112} durationInFrames={50} >
+			<Sequence from={112} durationInFrames={100} >
 					<Main  />
+			</Sequence>
+			<Sequence from={136}  >
+					<UnderScorePath color="red" titleText="CFC" />
 			</Sequence>
 		</div>
 	);

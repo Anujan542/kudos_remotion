@@ -1,7 +1,5 @@
 import {Composition} from 'remotion';
-
-
-import {HelloWorld} from './HelloWorld';
+import {HelloWorld} from './HelloWorld'
 
 
 export const RemotionVideo = () => {
@@ -10,8 +8,8 @@ export const RemotionVideo = () => {
 			<Composition
 				id="HelloWorld"
 				component={HelloWorld}
-				durationInFrames={350}
-				fps={30}
+				durationInFrames={212}
+				fps={50}
 				width={1920}
 				height={1080}
 			/>

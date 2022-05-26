@@ -9,9 +9,9 @@ const Main = () => {
 			<div>
 				<img src={video} />
 			</div>
-			{/* <div>
+			<div>
 				<LogoPath />
-			</div> */}
+			</div>
 		</div>
 	);
 };
