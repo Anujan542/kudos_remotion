@@ -1,18 +1,14 @@
-/* eslint-disable @remotion/warn-native-media-tag */
 import React from 'react';
+import {AbsoluteFill, Img} from 'remotion';
 import video from '../../assets/vid_8.gif';
 import {LogoPath} from './Logo/LogoPath';
 
 const Main = () => {
 	return (
-		<div>
-			<div>
-				<img src={video} />
-			</div>
-			<div>
-				<LogoPath />
-			</div>
-		</div>
+		<AbsoluteFill>
+			<Img src={video} />
+			<LogoPath />
+		</AbsoluteFill>
 	);
 };
 

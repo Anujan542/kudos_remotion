@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
-const UnderScorePath = ({color, titleText}) => {
+const UnderScorePath = ({color}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
@@ -23,15 +23,13 @@ const UnderScorePath = ({color, titleText}) => {
 		config: {mass: 10, damping: 500, stiffness: 300},
 	});
 
-	const text = titleText.split('  ').map((t) => ` ${t} `);
-
 	return (
 		<>
 			<AbsoluteFill
 				style={{
 					alignItems: 'center',
 					justifyContent: 'start',
-					marginTop: '24rem',
+					marginTop: '34rem',
 					marginLeft: '22rem',
 				}}
 			>
@@ -60,7 +58,7 @@ const UnderScorePath = ({color, titleText}) => {
 				style={{
 					alignItems: 'center',
 					justifyContent: 'start',
-					marginTop: '24rem',
+					marginTop: '34rem',
 					marginLeft: '22.5rem',
 				}}
 			>

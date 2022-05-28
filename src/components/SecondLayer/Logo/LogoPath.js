@@ -22,14 +22,14 @@ export const LogoPath = () => {
 			style={{
 				alignItems: 'center',
 				justifyContent: 'start',
-				marginTop: '5rem',
+				marginTop: '13rem',
 			}}
 		>
 			<div>
 				<svg
 					ViewBox={`0 0 ${config.width} ${config.height}`}
 					width="500px"
-					height="300px"
+					height="350px"
 					transform={`translate(0, ${LogoPathPostion})`}
 				>
 					<image xlinkHref={bat} width="500px" height="300px" />

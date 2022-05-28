@@ -1,11 +1,12 @@
 /* eslint-disable @remotion/warn-native-media-tag */
 import React from 'react';
+import {AbsoluteFill} from 'remotion';
 import b from '../../../public/img_8.jpg';
 import Logo from './Logo';
 
 const FirstLayer = () => {
 	return (
-		<div>
+		<AbsoluteFill>
 			<div>
 				<img
 					style={{
@@ -19,7 +20,7 @@ const FirstLayer = () => {
 			<div>
 				<Logo />
 			</div>
-		</div>
+		</AbsoluteFill>
 	);
 };
 
