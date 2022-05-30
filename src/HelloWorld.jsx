@@ -11,6 +11,14 @@ import Effect3, { Palette } from './components/Effects/Effect3';
 import ThirdMain from './components/ThirdLayer/ThirdMain';
 import { Effect4 } from './components/Effects/Effect4';
 import FirstTitle from './components/ThirdLayer/FirstTitle';
+import SecondTitle from './components/ThirdLayer/SecondTitle';
+import ThirdTitle from './components/ThirdLayer/ThirdTitle';
+import Effect5 from './components/Effects/Effect5';
+import ForthMain from './components/FourthLayer/ForthMain';
+import ForthLayerTitle  from './components/FourthLayer/ForthLayerTitle';
+import UnderLine from './components/FourthLayer/UnderLine';
+import SubTitle2 from './components/FourthLayer/SubTitle';
+
 
 
 export const HelloWorld = () => {
@@ -46,12 +54,34 @@ export const HelloWorld = () => {
 			<Sequence from={300} durationInFrames={35}   >
 					<Palette color="red" />
 			</Sequence>
-			<Sequence from={330} durationInFrames={60}  >
+			<Sequence from={330} durationInFrames={118}  >
 					<ThirdMain />
 			</Sequence>
-			<Sequence from={330} durationInFrames={60} >
+			<Sequence from={330} durationInFrames={118} >
 					<FirstTitle titleText="PROUDLY RECOZNIZED BY:" />
 			</Sequence>
+			<Sequence from={350} durationInFrames={99} >
+					<SecondTitle titleText="ANUJAN" />
+			</Sequence>
+			<Sequence from={380} durationInFrames={69} >
+					<ThirdTitle  />
+			</Sequence>
+			<Sequence from={440} durationInFrames={12} >
+					<Effect5 color="black"  />
+			</Sequence>
+			<Sequence from={450}  durationInFrames={150} >
+					<ForthMain/>
+			</Sequence>
+			<Sequence from={454}  durationInFrames={150} >
+					<ForthLayerTitle text="BRUCE WAYNE" />
+			</Sequence>
+			<Sequence from={500}  durationInFrames={100} >
+					<SubTitle2 text="Middle"  subText="5" />
+			</Sequence>
+			<Sequence from={500}  durationInFrames={100} >
+					<UnderLine secondaryColor="grey" />
+			</Sequence>
+
 		</div>
 	);
 };
