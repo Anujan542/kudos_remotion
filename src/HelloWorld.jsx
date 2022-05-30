@@ -18,6 +18,9 @@ import ForthMain from './components/FourthLayer/ForthMain';
 import ForthLayerTitle  from './components/FourthLayer/ForthLayerTitle';
 import UnderLine from './components/FourthLayer/UnderLine';
 import SubTitle2 from './components/FourthLayer/SubTitle';
+import ForthLayerTitle2 from './components/FourthLayer/ForthLayerTitle2';
+import FourthLayerEffect from './components/Effects/FourthLayerEffect';
+import FithLayerMain from './components/FifthLayer/FithLayerMain';
 
 
 
@@ -73,13 +76,22 @@ export const HelloWorld = () => {
 					<ForthMain/>
 			</Sequence>
 			<Sequence from={454}  durationInFrames={150} >
-					<ForthLayerTitle text="BRUCE WAYNE" />
+					<ForthLayerTitle text="BRUCE" />
+			</Sequence>
+			<Sequence from={454}  durationInFrames={150} >
+					<ForthLayerTitle2 text="Wayne" />
 			</Sequence>
 			<Sequence from={500}  durationInFrames={100} >
 					<SubTitle2 text="Middle"  subText="5" />
 			</Sequence>
 			<Sequence from={500}  durationInFrames={100} >
 					<UnderLine secondaryColor="grey" />
+			</Sequence>
+			<Sequence from={600}  durationInFrames={20} >
+		    	<FourthLayerEffect color="red" />
+			</Sequence>
+			<Sequence from={618} >
+		    	<FithLayerMain />
 			</Sequence>
 
 		</div>

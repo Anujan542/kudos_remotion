@@ -18,7 +18,7 @@ const SubTitle2 = ({text, subText}) => {
 				style={{
 					alignItems: 'center',
 					justifyContent: 'start',
-					marginTop: '30rem',
+					marginTop: '33rem',
 				}}
 			>
 				<h1
@@ -41,7 +41,7 @@ const SubTitle2 = ({text, subText}) => {
 				style={{
 					alignItems: 'center',
 					justifyContent: 'start',
-					marginTop: '33rem',
+					marginTop: '36rem',
 				}}
 			>
 				<h3

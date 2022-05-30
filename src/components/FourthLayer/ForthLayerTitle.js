@@ -27,7 +27,7 @@ const ForthLayerTitle = ({text}) => {
 					display: 'flex',
 					justifyContent: 'center',
 					fontSize: '35px',
-					marginLeft: '50%',
+					marginLeft: '45%',
 					maxWidth: '50%',
 					color: 'white',
 					transform: `translateY(${interpolate(progress, [0, 1], [60, 0])}px)`,

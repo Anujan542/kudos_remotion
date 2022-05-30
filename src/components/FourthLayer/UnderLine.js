@@ -33,8 +33,8 @@ const UnderLine = ({secondaryColor}) => {
 				style={{
 					alignItems: 'center',
 					justifyContent: 'start',
-					marginTop: '40rem',
-					marginLeft: '45rem',
+					marginTop: '42rem',
+					marginLeft: '42rem',
 				}}
 			>
 				<svg
@@ -62,7 +62,7 @@ const UnderLine = ({secondaryColor}) => {
 				style={{
 					alignItems: 'center',
 					justifyContent: 'start',
-					marginTop: '40rem',
+					marginTop: '42rem',
 					marginLeft: '50rem',
 				}}
 			>
