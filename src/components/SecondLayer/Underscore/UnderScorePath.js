@@ -29,7 +29,7 @@ const UnderScorePath = ({color}) => {
 				style={{
 					alignItems: 'center',
 					justifyContent: 'start',
-					marginTop: '34rem',
+					marginTop: '31.4rem',
 					marginLeft: '22rem',
 				}}
 			>
@@ -58,7 +58,7 @@ const UnderScorePath = ({color}) => {
 				style={{
 					alignItems: 'center',
 					justifyContent: 'start',
-					marginTop: '34rem',
+					marginTop: '31.4rem',
 					marginLeft: '22.5rem',
 				}}
 			>

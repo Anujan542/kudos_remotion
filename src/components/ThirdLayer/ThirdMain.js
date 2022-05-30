@@ -1,5 +1,5 @@
 import React from 'react';
-import {Img} from 'remotion';
+import {AbsoluteFill, Img} from 'remotion';
 
 import b from '../../assets/img_5.jpg';
 

@@ -10,7 +10,7 @@ const SubTitle = ({titleText}) => {
 			style={{
 				alignItems: 'center',
 				justifyContent: 'start',
-				marginTop: '44rem',
+				marginTop: '42rem',
 			}}
 		>
 			<h1

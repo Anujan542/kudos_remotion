@@ -9,6 +9,8 @@ import SubTitle from './components/SecondLayer/SubTitle/Subtitle';
 import Date from './components/SecondLayer/Date/Date';
 import Effect3, { Palette } from './components/Effects/Effect3';
 import ThirdMain from './components/ThirdLayer/ThirdMain';
+import { Effect4 } from './components/Effects/Effect4';
+import FirstTitle from './components/ThirdLayer/FirstTitle';
 
 
 export const HelloWorld = () => {
@@ -38,11 +40,17 @@ export const HelloWorld = () => {
 			<Sequence from={232} durationInFrames={70} >
 					<Date titleText="18 MAY 2022" />
 			</Sequence>
-			<Sequence from={268}   >
+			<Sequence from={268} durationInFrames={35}   >
+					<Effect4 color="red" />
+			</Sequence>
+			<Sequence from={300} durationInFrames={35}   >
 					<Palette color="red" />
 			</Sequence>
-			<Sequence from={333}  >
+			<Sequence from={330} durationInFrames={60}  >
 					<ThirdMain />
+			</Sequence>
+			<Sequence from={330} durationInFrames={60} >
+					<FirstTitle titleText="PROUDLY RECOZNIZED BY:" />
 			</Sequence>
 		</div>
 	);

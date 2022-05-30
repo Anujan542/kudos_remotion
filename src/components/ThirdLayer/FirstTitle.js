@@ -1,31 +1,31 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 
-import './Title.css';
+import '../SecondLayer/Title/Title.css';
 
-const Title = ({titleText}) => {
+const FirstTitle = ({titleText}) => {
 	return (
 		<AbsoluteFill
 			className="typewriter"
 			style={{
 				alignItems: 'center',
 				justifyContent: 'start',
-				marginTop: '32rem',
+				//	MarginTop: '32rem',
 			}}
 		>
-			<h1
+			<h6
 				style={{
 					fontFamily: 'SF Pro Text, Helvetica, Arial',
 					FontWeight: 'bold',
-					fontSize: '120px',
+					fontSize: '80px',
 					textAlign: 'center',
 					color: 'white',
 				}}
 			>
 				{titleText}
-			</h1>
+			</h6>
 		</AbsoluteFill>
 	);
 };
 
-export default Title;
+export default FirstTitle;
