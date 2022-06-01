@@ -1,10 +1,10 @@
 /* eslint-disable @remotion/warn-native-media-tag */
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import b from '../../../public/img_8.jpg';
+
 import Logo from './Logo';
 
-const FirstLayer = () => {
+const FirstLayer = ({image}) => {
 	return (
 		<AbsoluteFill>
 			<div>
@@ -14,7 +14,7 @@ const FirstLayer = () => {
 						opacity: '1',
 						position: 'absolute',
 					}}
-					src={b}
+					src={image}
 				/>
 			</div>
 			<div>

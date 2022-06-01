@@ -21,6 +21,19 @@ import SubTitle2 from './components/FourthLayer/SubTitle';
 import ForthLayerTitle2 from './components/FourthLayer/ForthLayerTitle2';
 import FourthLayerEffect from './components/Effects/FourthLayerEffect';
 import FithLayerMain from './components/FifthLayer/FithLayerMain';
+import { FadeTransition } from './components/FifthLayer/TransitionEffect';
+import SixthLayer from './components/SixthLayer/SixthLayer';
+import { SixthTitle } from './components/SixthLayer/SixthTitle';
+import { SixthName } from './components/SixthLayer/SixthName';
+import { SixthUserName } from './components/SixthLayer/SixthUserName';
+import { VideoPath } from './components/SixthLayer/VideoPath';
+
+// Assets 
+
+import BackImage from './assets/img_8.jpg'
+import Effect6 from './components/Effects/Effect6';
+import SeventhMain from './components/7thLayer/7thMain';
+import LastTitle from './components/7thLayer/LastTitle';
 
 
 
@@ -28,7 +41,7 @@ export const HelloWorld = () => {
 	return (
 		<div style={{flex: 1, backgroundColor: 'black'}}>
 			<Sequence from={0} durationInFrames={70} >
-					<FirstLayer  />
+					<FirstLayer image={BackImage} />
 			</Sequence>
 			<Sequence from={65} durationInFrames={20} >
 					<FirstLayerEffect color="red" />
@@ -67,7 +80,9 @@ export const HelloWorld = () => {
 					<SecondTitle titleText="ANUJAN" />
 			</Sequence>
 			<Sequence from={380} durationInFrames={69} >
-					<ThirdTitle  />
+			<FadeTransition type="in" duration={50}>
+		     	<ThirdTitle  />
+						</FadeTransition>	
 			</Sequence>
 			<Sequence from={440} durationInFrames={12} >
 					<Effect5 color="black"  />
@@ -90,10 +105,50 @@ export const HelloWorld = () => {
 			<Sequence from={600}  durationInFrames={20} >
 		    	<FourthLayerEffect color="red" />
 			</Sequence>
-			<Sequence from={618} >
-		    	<FithLayerMain />
+			<Sequence from={618} durationInFrames={180} >
+			<FadeTransition type="in" duration={50}>
+			<FithLayerMain />
+						</FadeTransition>
 			</Sequence>
-
+			<Sequence from={795} durationInFrames={1120} >
+						<FadeTransition type="in" duration={50}>
+						<SixthLayer />
+					</FadeTransition>
+			</Sequence>
+			<Sequence from={795} durationInFrames={1120} >
+		    	<SixthTitle />
+			</Sequence>
+			<Sequence from={795} durationInFrames={1120} >
+		    	<SixthName />
+			</Sequence>
+			<Sequence from={795} durationInFrames={1120} >
+		    	<SixthUserName title="ANUJAN" />
+			</Sequence>
+			<Sequence from={880} durationInFrames={1030} >
+		    	<VideoPath />
+			</Sequence>
+			<Sequence from={1900} durationInFrames={20} >
+		  	<Palette color="red" />
+			</Sequence>
+			<Sequence from={1920} durationInFrames={180} >
+				<FadeTransition type="in" duration={50}>
+				<FadeTransition type="out" duration={50}>
+						<SeventhMain />
+						</FadeTransition>
+						</FadeTransition>
+			</Sequence>
+			<Sequence from={2100} durationInFrames={800} >
+			<Main  />
+			</Sequence>
+			<Sequence from={2140} durationInFrames={760} >
+					<Title titleText="CFC" />
+			</Sequence>
+			<Sequence from={2180} durationInFrames={720} >
+					<SubTitle titleText="CEO" />
+			</Sequence>
+			<Sequence from={2190} durationInFrames={720} >
+					<LastTitle  />
+			</Sequence>
 		</div>
 	);
 };

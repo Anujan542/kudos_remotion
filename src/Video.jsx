@@ -8,8 +8,8 @@ export const RemotionVideo = () => {
 			<Composition
 				id="HelloWorld"
 				component={HelloWorld}
-				durationInFrames={1000}
-				fps={40}
+				durationInFrames={3000}
+				fps={35}
 				width={1920}
 				height={1080}
 			/>

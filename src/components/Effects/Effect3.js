@@ -1,4 +1,3 @@
-import {shade, tint} from 'polished';
 import React from 'react';
 import {
 	AbsoluteFill,
@@ -18,7 +17,7 @@ export const Palette = ({color}) => {
 
 	const scale = interpolate(frame, [0, 50, 70], [0.8, 1.8, 10], {});
 
-	const opacity = interpolate(frame, [1, 30], [0, 9]);
+	const opacity = interpolate(frame, [1, 10], [0, 9]);
 
 	return (
 		<>
