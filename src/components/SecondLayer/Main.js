@@ -1,13 +1,13 @@
 import React from 'react';
-import {AbsoluteFill, Img} from 'remotion';
-import video from '../../assets/vid_8.gif';
+import {AbsoluteFill, Img, Video} from 'remotion';
+
 import {LogoPath} from './Logo/LogoPath';
 
-const Main = () => {
+const Main = ({baseBall, logo}) => {
 	return (
 		<AbsoluteFill>
-			<Img src={video} />
-			<LogoPath />
+			<Video src={baseBall} />
+			<LogoPath logo={logo} />
 		</AbsoluteFill>
 	);
 };

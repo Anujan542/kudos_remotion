@@ -1,24 +1,22 @@
-/* eslint-disable @remotion/warn-native-media-tag */
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill, Img} from 'remotion';
 
 import Logo from './Logo';
 
-const FirstLayer = ({image}) => {
+const FirstLayer = ({image, logo}) => {
 	return (
 		<AbsoluteFill>
+			<Img
+				style={{
+					filter: 'grayscale(100%)',
+					opacity: '1',
+					//  Position: "absolute",
+				}}
+				src={image}
+			/>
+
 			<div>
-				<img
-					style={{
-						filter: 'grayscale(100%)',
-						opacity: '1',
-						position: 'absolute',
-					}}
-					src={image}
-				/>
-			</div>
-			<div>
-				<Logo />
+				<Logo logo={logo} />
 			</div>
 		</AbsoluteFill>
 	);

@@ -21,7 +21,7 @@ export const SixthUserName = ({title}) => {
 	const freeTranslateX = interpolate(
 		transitionProgress,
 		[0, 1],
-		[0, -width / 4]
+		[0, -width / 7]
 	);
 
 	return (

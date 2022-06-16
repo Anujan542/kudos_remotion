@@ -1,15 +1,14 @@
-import {Img} from 'remotion';
-import {useVideoConfig} from 'remotion';
-import React from 'react';
-import play from '../../assets/vid_6.gif';
+import { Video } from "remotion";
+import { useVideoConfig } from "remotion";
+import React from "react";
 
-export const SeventhMain = () => {
-	const {width, height} = useVideoConfig();
-	return (
-		<>
-			<Img src={play} width={width} height={height} />
-		</>
-	);
+export const SeventhMain = ({ video }) => {
+  const { width, height } = useVideoConfig();
+  return (
+    <>
+      <Video src={video} width={width} height={height} />
+    </>
+  );
 };
 
 export default SeventhMain;

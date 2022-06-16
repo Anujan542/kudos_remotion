@@ -22,7 +22,7 @@ export const SixthTitle = () => {
 	const freeTranslateX = interpolate(
 		transitionProgress,
 		[0, 1],
-		[0, -width / 4]
+		[0, -width / 7]
 	);
 
 	return (
@@ -30,11 +30,12 @@ export const SixthTitle = () => {
 			style={{
 				fontFamily: 'SF Pro Text, Helvetica, Arial',
 				fontWeight: 'bold',
-				fontSize: 80,
+				fontSize: 70,
 				textAlign: 'center',
 				position: 'absolute',
 				width: '100%',
 				marginTop: '10rem',
+				marginLeft: '1rem',
 				transform: `translateX(${freeTranslateX}px)`,
 			}}
 		>

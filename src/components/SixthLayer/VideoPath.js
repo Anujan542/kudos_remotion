@@ -34,7 +34,12 @@ export const VideoPath = () => {
 			}}
 		>
 			<div className="bounce-in-bottom">
-				<Video width="1200px" height="750px" src={video} />
+				<Video
+					width="1200px"
+					height="750px"
+					src={video}
+					// Style={{border: '10px solid white'}}
+				/>
 				{/* <svg
 					ViewBox={`0 0 ${config.width} ${config.height}`}
 					width="1200px"

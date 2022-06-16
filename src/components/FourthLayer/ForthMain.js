@@ -3,15 +3,15 @@ import {AbsoluteFill, Video} from 'remotion';
 import back from '../../assets/vid_2.mp4';
 import Title from './Title';
 
-const ForthMain = () => {
+const ForthMain = ({video, logo, sideImage, Logo1, Logo2}) => {
 	return (
 		<>
 			<Video
 				playbackRate={0.5}
-				src={back}
+				src={video}
 				style={{filter: 'grayscale(80%)', position: 'relative'}}
 			/>
-			<Title />
+			<Title logo={logo} sideImage={sideImage} Logo1={Logo1} Logo2={Logo2} />
 		</>
 	);
 };

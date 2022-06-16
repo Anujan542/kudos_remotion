@@ -1,16 +1,15 @@
-/* eslint-disable @remotion/warn-native-media-tag */
 import React from 'react';
 import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import bat from '../../../../public/bat.jpg';
+import bat from '../../../assets/bat.jpg';
 
-export const LogoPath = () => {
+export const LogoPath = ({logo}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 
 	const config = useVideoConfig();
 
 	const LogoPathPostion = spring({
-		from: -200,
+		from: -500,
 		to: 0,
 		frame,
 		fps,

@@ -1,15 +1,14 @@
-import {Img, useVideoConfig} from 'remotion';
+import { useVideoConfig, Video } from "remotion";
 
-import React from 'react';
-import play from '../../assets/vid_3.gif';
+import React from "react";
 
-const FithLayerMain = () => {
-	const {width, height} = useVideoConfig();
-	return (
-		<>
-			<Img src={play} width={width} height={height} />
-		</>
-	);
+const FithLayerMain = ({ video }) => {
+  const { width, height } = useVideoConfig();
+  return (
+    <>
+      <Video src={video} width={width} height={height} />
+    </>
+  );
 };
 
 export default FithLayerMain;

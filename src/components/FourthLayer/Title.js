@@ -5,13 +5,11 @@ import {useCurrentFrame} from 'remotion';
 import {Img} from 'remotion';
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import back from '../../assets/img_9.png';
-import bat from '../../assets/bat.jpg';
 import Logos from '../ThirdLayer/Logos';
 
 import './Fade.css';
 
-const Title = () => {
+const Title = ({logo, sideImage, Logo1, Logo2}) => {
 	return (
 		<>
 			<AbsoluteFill
@@ -19,15 +17,15 @@ const Title = () => {
 				style={{
 					alignItems: 'start',
 					justifyContent: 'start',
-					marginLeft: '-20rem',
+					marginTop: '10rem',
 				}}
 			>
 				<div>
 					<Img
 						style={{filter: 'grayscale(100%)', opacity: '1.0'}}
-						width="100%"
-						height="70%"
-						src={back}
+						// Width="100%"
+						// height="70%"
+						src={sideImage}
 					/>
 				</div>
 			</AbsoluteFill>
@@ -40,9 +38,9 @@ const Title = () => {
 				}}
 			>
 				<div>
-					<Img width="90%" height="15%" src={bat} />
+					<Img width="90%" height="15%" src={logo} />
 
-					<Logos />
+					<Logos Logo1={Logo1} Logo2={Logo2} />
 				</div>
 			</AbsoluteFill>
 		</>
