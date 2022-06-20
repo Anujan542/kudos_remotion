@@ -3,13 +3,12 @@ import {initializeApp} from 'firebase/app';
 import {getFirestore} from '@firebase/firestore';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyC44G46FPIkKA2WImt_JEwAln-iwDTTxck',
-	authDomain: 'remotion-kudos.firebaseapp.com',
-	projectId: 'remotion-kudos',
-	storageBucket: 'remotion-kudos.appspot.com',
-	messagingSenderId: '898035089400',
-	appId: '1:898035089400:web:eca407317f2037146e200d',
-	measurementId: 'G-PNXNDE2JSB',
+	apiKey: 'AIzaSyAAeXCp4VADOYAMSZ4EPZXIZqmlLnDtAjc',
+	authDomain: 'kudos-529e8.firebaseapp.com',
+	projectId: 'kudos-529e8',
+	storageBucket: 'kudos-529e8.appspot.com',
+	messagingSenderId: '224911380766',
+	appId: '1:224911380766:web:5723a3b42adcf9a76f790f',
 };
 
 const app = initializeApp(firebaseConfig);

@@ -34,15 +34,15 @@ import LastTitle from './components/7thLayer/LastTitle';
 
 
 // Assets 
-import Baseball from './assets/baseball.mp4'
+// import Baseball from './assets/baseball.mp4'
 import Football from './assets/football.mp4'
-import CoachVideo from './assets/coach_video.mp4'
+// Import CoachVideo from './assets/coach_video.mp4'
 
-import FirstImage from './assets/img_8.jpg'
+// import FirstImage from './assets/img_8.jpg'
 import logo from './assets/bat.jpg'
 import ThirdLayer from './assets/img_5.jpg'
 import FourthVideo from './assets/vid_2.mp4'
-import SportImage from './assets/img_9.png'
+// Import SportImage from './assets/img_9.png'
 import Logo1 from "./assets/img_3.png";
 import Logo2 from "./assets/img_4.png"
 import { db } from './Firebase-Config';
@@ -51,6 +51,7 @@ import {
   getDocs,
 } from "firebase/firestore";
 import { useEffect, useState } from 'react';
+import { Music } from './components/audio/Audio';
 
 export const HelloWorld = () => {
 
@@ -64,7 +65,7 @@ export const HelloWorld = () => {
 		setAssets(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
 
     continueRender(handle);
-  }, [handle]);
+  }, [handle,usersCollectionRef]);
 
 	useEffect(() => {
     fetchData();
@@ -139,7 +140,7 @@ export const HelloWorld = () => {
 		</Sequence>
 		<Sequence from={618} durationInFrames={179} >
 	    	<FadeTransition type="in" duration={50}>
-		<FithLayerMain video={Football} />
+		<FithLayerMain video={item.SecondLayerVideo} />
 		    </FadeTransition>
 		</Sequence>
 		<Sequence from={795} durationInFrames={1120} >
@@ -165,12 +166,12 @@ export const HelloWorld = () => {
 		<Sequence from={1920} durationInFrames={180} >
 			<FadeTransition type="in" duration={50}>
 			    <FadeTransition type="out" duration={50}>
-					<SeventhMain video={Football}  />
+					<SeventhMain video={item.SecondLayerVideo}  />
 				</FadeTransition>
 			</FadeTransition>
 		</Sequence>
 		<Sequence from={2100} durationInFrames={800} >
-		<Main baseBall={item.SecondLayerVideo} logo={logo} />
+		<Main baseBall={item.SecondLayerVideo} logo={item.Logo} />
 		</Sequence>
 		<Sequence from={2140} durationInFrames={760} >
 		<Title titleText={`${item.StudentFirstName} ${item.StudentLastName}`}/>
@@ -181,9 +182,7 @@ export const HelloWorld = () => {
 					<Sequence from={2190} durationInFrames={720} >
 				<LastTitle  />
 			</Sequence>
-			{/* <Sequence from={0} durationInFrames={2800} >
-			<Audio src={audio} />
-			</Sequence> */}
+			<Music />
 		</div>
 			))}
 			</>

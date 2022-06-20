@@ -31,7 +31,7 @@ export const LogoPath = ({logo}) => {
 					height="350px"
 					transform={`translate(0, ${LogoPathPostion})`}
 				>
-					<image xlinkHref={bat} width="500px" height="300px" />
+					<image xlinkHref={logo} width="500px" height="300px" />
 				</svg>
 			</div>
 		</AbsoluteFill>

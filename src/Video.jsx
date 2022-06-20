@@ -1,10 +1,7 @@
 import {Composition} from 'remotion';
 import { HelloWorld } from './HelloWorld'
 
-
-
-
-export const RemotionVideo = () => { 
+export const RemotionVideo = () => {
 	return (
 		<>
 			<Composition
