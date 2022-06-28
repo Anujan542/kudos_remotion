@@ -5,16 +5,16 @@ import {useVideoConfig} from 'remotion';
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 
-import '../SecondLayer/Title/Title.css';
-
 const SubTitle2 = ({text, subText}) => {
-	const {fps} = useVideoConfig();
 	const frame = useCurrentFrame();
+
+	const charsShown = Math.floor(frame / 3);
+	const textToShow1 = text.slice(0, charsShown);
+	const textToShow2 = subText.slice(0, charsShown);
 
 	return (
 		<>
 			<AbsoluteFill
-				className="typewriter"
 				style={{
 					alignItems: 'center',
 					justifyContent: 'start',
@@ -33,11 +33,10 @@ const SubTitle2 = ({text, subText}) => {
 						color: 'white',
 					}}
 				>
-					{text}
+					{textToShow1}
 				</h1>
 			</AbsoluteFill>
 			<AbsoluteFill
-				className="typewriter"
 				style={{
 					alignItems: 'center',
 					justifyContent: 'start',
@@ -55,7 +54,7 @@ const SubTitle2 = ({text, subText}) => {
 						color: 'white',
 					}}
 				>
-					{subText}
+					{textToShow2}
 				</h3>
 			</AbsoluteFill>
 		</>

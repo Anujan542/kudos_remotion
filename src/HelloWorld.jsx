@@ -1,5 +1,5 @@
 import {useCallback} from 'react'
-import {Audio, continueRender, delayRender} from 'remotion'
+import {continueRender, delayRender} from 'remotion'
 import { Sequence} from 'remotion';
 import FirstLayer from './components/FirstLayer/FirstLayer';
 import Main from './components/SecondLayer/Main';
@@ -35,21 +35,17 @@ import LastTitle from './components/7thLayer/LastTitle';
 
 // Assets 
 // import Baseball from './assets/baseball.mp4'
-import Football from './assets/football.mp4'
+// import Football from './assets/football.mp4'
 // Import CoachVideo from './assets/coach_video.mp4'
 
 // import FirstImage from './assets/img_8.jpg'
-import logo from './assets/bat.jpg'
+// import logo from './assets/bat.jpg'
 import ThirdLayer from './assets/img_5.jpg'
 import FourthVideo from './assets/vid_2.mp4'
 // Import SportImage from './assets/img_9.png'
 import Logo1 from "./assets/img_3.png";
 import Logo2 from "./assets/img_4.png"
-import { db } from './Firebase-Config';
-import {
-  collection,
-  getDocs,
-} from "firebase/firestore";
+
 import { useEffect, useState } from 'react';
 import { Music } from './components/audio/Audio';
 
@@ -58,43 +54,50 @@ export const HelloWorld = () => {
   const [handle] = useState(() => delayRender());
 
 	const [assets,setAssets] = useState([])
-	const usersCollectionRef = collection(db, "assets");
+
 
 	const fetchData = useCallback(async () => {
-		const data = await getDocs(usersCollectionRef);
-		setAssets(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  	await	fetch(`https://remotion-api.herokuapp.com/api/getDetails`)
+			.then((response) => response.json())
+			.then((actualData) => {
+        setAssets(actualData);
+      })
+				.catch((err) => {
+					console.log(err.message);
+				});
 
-    continueRender(handle);
-  }, [handle,usersCollectionRef]);
+    continueRender(handle)
+	}, [handle]);
+	
 
 	useEffect(() => {
-    fetchData();
+		fetchData();
   }, [fetchData]);
 
 	return (
 		<>
-			{assets.map((item) => (
-			<div style={{flex: 1, backgroundColor: 'black'}}>
+			{assets.map((item,index) => (
+			<div key={index} style={{flex: 1, backgroundColor: 'black'}}>
 		    <Sequence from={0} durationInFrames={70} >
-					<FirstLayer image={item.AwardImage} logo={item.Logo} />
+					<FirstLayer image={item.awardImage} logo={item.logo} />
 				</Sequence>
 			<Sequence from={65} durationInFrames={20} >
-		 	  	<FirstLayerEffect color={item.PrimaryColor} />
+		 	  	<FirstLayerEffect color={item.primaryColor} />
 			 </Sequence>
 			<Sequence from={84} durationInFrames={30} >
-			<FirstLayerEffect2 color={item.PrimaryColor} />
+			<FirstLayerEffect2 color={item.primaryColor} />
 					</Sequence>
 		<Sequence from={112} durationInFrames={190} >
-				<Main baseBall={item.SecondLayerVideo} logo={item.Logo} />
-					</Sequence>
+				<Main baseBall={item.secondLayerVideo} logo={item.logo} />
+		</Sequence>
 		<Sequence from={136}  durationInFrames={166} >
-				<UnderScorePath color={item.PrimaryColor}   />
+				<UnderScorePath color={item.primaryColor}   />
 					</Sequence>
 			<Sequence from={185} durationInFrames={116} >
-				<Title titleText={item.BrandName} />
+				<Title titleText={item.brandName} />
 					</Sequence>
 			<Sequence from={203} durationInFrames={100} >
-				<SubTitle titleText={item.AwardTitle} />
+				<SubTitle titleText={item.awardTitle} />
 			</Sequence>
 			<Sequence from={232} durationInFrames={70} >
 				<Date titleText="18 MAY 2022" />
@@ -103,7 +106,7 @@ export const HelloWorld = () => {
 				<Effect4 />
 					</Sequence>
 			<Sequence from={300} durationInFrames={35}   >
-				<Palette color={item.PrimaryColor} />
+				<Palette color={item.primaryColor} />
 					</Sequence>
 			<Sequence from={330} durationInFrames={118}  >
 				<ThirdMain video={ThirdLayer} Logo1={Logo1} Logo2={Logo2} />
@@ -112,35 +115,35 @@ export const HelloWorld = () => {
 				<FirstTitle titleText="PROUDLY RECOZNIZED BY:" />
 					</Sequence>
 		<Sequence from={350} durationInFrames={99} >
-				<SecondTitle titleText={item.CoachName} />
+				<SecondTitle titleText={item.coachName} />
 		</Sequence>
 		<Sequence from={380} durationInFrames={69} >
 			 <ThirdTitle  />	
 		</Sequence>
 		<Sequence from={440} durationInFrames={12} >
-		<Effect5 color={item.SecondaryColor}  />
+		<Effect5 color={item.secondaryColor}  />
 					</Sequence>
 					<Sequence from={450}  durationInFrames={150} >
-		<ForthMain video={FourthVideo} logo={item.Logo} sideImage={item.SideImage} Logo1={Logo1} Logo2={Logo2} />
+		<ForthMain video={FourthVideo} logo={item.logo} sideImage={item.sideImage} Logo1={Logo1} Logo2={Logo2} />
 		</Sequence>
 		<Sequence from={454}  durationInFrames={150} >
-				<ForthLayerTitle text={item.StudentFirstName} />
+				<ForthLayerTitle text={item.studentFirstName} />
 		</Sequence>
 		<Sequence from={454}  durationInFrames={150} >
-				<ForthLayerTitle2 text={item.StudentLastName} />
+				<ForthLayerTitle2 text={item.studentLastName} />
 		</Sequence>
 		<Sequence from={500}  durationInFrames={100} >
-				<SubTitle2 text={item.StudentPosition}  subText={item.StudentShirtNumber} />
+				<SubTitle2 text={item.studentPosition}  subText={item.studentShirtNumber} />
 		</Sequence>
 		<Sequence from={500}  durationInFrames={100} >
-				<UnderLine secondaryColor={item.SecondaryColor} />
+				<UnderLine secondaryColor={item.secondaryColor} />
 		</Sequence>
 		<Sequence from={600}  durationInFrames={20} >
-			<FourthLayerEffect color={item.PrimaryColor}  />
+			<FourthLayerEffect color={item.primaryColor}  />
 		</Sequence>
 		<Sequence from={618} durationInFrames={179} >
 	    	<FadeTransition type="in" duration={50}>
-		<FithLayerMain video={item.SecondLayerVideo} />
+		<FithLayerMain video={item.secondLayerVideo} />
 		    </FadeTransition>
 		</Sequence>
 		<Sequence from={795} durationInFrames={1120} >
@@ -158,26 +161,26 @@ export const HelloWorld = () => {
 			<SixthUserName title="ANUJAN" />
 		</Sequence>
 		<Sequence from={880} durationInFrames={1030} >
-			<VideoPath video={item.CoachVideo} />
+			<VideoPath video={item.coachVideo} />
 		</Sequence>
 		<Sequence from={1880} durationInFrames={40} >
-		  <Palette color={item.PrimaryColor} />
+		  <Palette color={item.primaryColor} />
 		</Sequence>
 		<Sequence from={1920} durationInFrames={180} >
 			<FadeTransition type="in" duration={50}>
 			    <FadeTransition type="out" duration={50}>
-					<SeventhMain video={item.SecondLayerVideo}  />
+					<SeventhMain video={item.secondLayerVideo}  />
 				</FadeTransition>
 			</FadeTransition>
 		</Sequence>
 		<Sequence from={2100} durationInFrames={800} >
-		<Main baseBall={item.SecondLayerVideo} logo={item.Logo} />
+		<Main baseBall={item.secondLayerVideo} logo={item.logo} />
 		</Sequence>
 		<Sequence from={2140} durationInFrames={760} >
-		<Title titleText={`${item.StudentFirstName} ${item.StudentLastName}`}/>
+		<Title titleText={`${item.studentFirstName} ${item.studentLastName}`}/>
 		</Sequence>
 		<Sequence from={2180} durationInFrames={720} >
-				<SubTitle titleText={item.BrandName}/>
+				<SubTitle titleText={item.brandName}/>
 					</Sequence>
 					<Sequence from={2190} durationInFrames={720} >
 				<LastTitle  />

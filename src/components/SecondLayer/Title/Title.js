@@ -1,12 +1,13 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
-
-import './Title.css';
+import {AbsoluteFill, useCurrentFrame} from 'remotion';
 
 const Title = ({titleText}) => {
+	const frame = useCurrentFrame();
+
+	const charsShown = Math.floor(frame / 3);
+	const textToShow = titleText.slice(0, charsShown);
 	return (
 		<AbsoluteFill
-			className="typewriter"
 			style={{
 				alignItems: 'center',
 				justifyContent: 'start',
@@ -22,7 +23,7 @@ const Title = ({titleText}) => {
 					color: 'white',
 				}}
 			>
-				{titleText}
+				{textToShow}
 			</h1>
 		</AbsoluteFill>
 	);
