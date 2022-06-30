@@ -1,4 +1,4 @@
 import {Config} from 'remotion';
 
 Config.Rendering.setImageFormat('jpeg');
-Config.Preview.setMaxTimelineTracks(50);
+Config.Preview.setMaxTimelineTracks(80);

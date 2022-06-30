@@ -1,5 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import 'typeface-open-sans';
 
 const Title = ({titleText}) => {
 	const frame = useCurrentFrame();
@@ -16,9 +17,9 @@ const Title = ({titleText}) => {
 		>
 			<h1
 				style={{
-					fontFamily: 'SF Pro Text, Helvetica, Arial',
-					FontWeight: 'bold',
-					fontSize: '120px',
+					fontFamily: 'Open Sans',
+					FontWeight: '800',
+					fontSize: '100px',
 					textAlign: 'center',
 					color: 'white',
 				}}

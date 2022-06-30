@@ -1,5 +1,6 @@
 import {useCallback} from 'react'
-import {continueRender, delayRender} from 'remotion'
+import { continueRender, delayRender } from 'remotion'
+import 'typeface-open-sans';
 import { Sequence} from 'remotion';
 import FirstLayer from './components/FirstLayer/FirstLayer';
 import Main from './components/SecondLayer/Main';
@@ -47,7 +48,12 @@ import Logo1 from "./assets/img_3.png";
 import Logo2 from "./assets/img_4.png"
 
 import { useEffect, useState } from 'react';
-import { Music } from './components/audio/Audio';
+import { EncourageMusic, Music } from './components/audio/Audio';
+import LastTitle2 from './components/7thLayer/LastTitle2';
+import LastTitle3 from './components/7thLayer/LastTitle3';
+import LastTitle4 from './components/7thLayer/LastTitle4';
+import StageClipGIf from './components/7thLayer/StageClipGIf';
+import LogoImage from './components/7thLayer/LogoImage';
 
 export const HelloWorld = () => {
 
@@ -100,7 +106,7 @@ export const HelloWorld = () => {
 				<SubTitle titleText={item.awardTitle} />
 			</Sequence>
 			<Sequence from={232} durationInFrames={70} >
-				<Date titleText="18 MAY 2022" />
+				<Date titleText="29th Jun 2022" />
 					</Sequence>
 					<Sequence from={268} durationInFrames={35}   >
 				<Effect4 />
@@ -123,67 +129,82 @@ export const HelloWorld = () => {
 		<Sequence from={440} durationInFrames={12} >
 		<Effect5 color={item.secondaryColor}  />
 					</Sequence>
-					<Sequence from={450}  durationInFrames={150} >
+					<Sequence from={450}  durationInFrames={350} >
 		<ForthMain video={FourthVideo} logo={item.logo} sideImage={item.sideImage} Logo1={Logo1} Logo2={Logo2} />
+					</Sequence>
+		<Sequence from={450} durationInFrames={350} >
+	    	<EncourageMusic  audioVoice={item.coachAudio} />
 		</Sequence>
-		<Sequence from={454}  durationInFrames={150} >
+		<Sequence from={454}  durationInFrames={350} >
 				<ForthLayerTitle text={item.studentFirstName} />
 		</Sequence>
-		<Sequence from={454}  durationInFrames={150} >
+		<Sequence from={454}  durationInFrames={350} >
 				<ForthLayerTitle2 text={item.studentLastName} />
 		</Sequence>
-		<Sequence from={500}  durationInFrames={100} >
+		<Sequence from={500}  durationInFrames={300} >
 				<SubTitle2 text={item.studentPosition}  subText={item.studentShirtNumber} />
 		</Sequence>
-		<Sequence from={500}  durationInFrames={100} >
+		<Sequence from={500}  durationInFrames={300} >
 				<UnderLine secondaryColor={item.secondaryColor} />
 		</Sequence>
-		<Sequence from={600}  durationInFrames={20} >
+		<Sequence from={800}  durationInFrames={20} >
 			<FourthLayerEffect color={item.primaryColor}  />
 		</Sequence>
-		<Sequence from={618} durationInFrames={179} >
+		<Sequence from={819} durationInFrames={179} >
 	    	<FadeTransition type="in" duration={50}>
 		<FithLayerMain video={item.secondLayerVideo} />
 		    </FadeTransition>
-		</Sequence>
-		<Sequence from={795} durationInFrames={1120} >
+					</Sequence>
+		<Sequence from={998} durationInFrames={1130} >
 			<FadeTransition type="in" duration={50}>
-					<SixthLayer />
+					<SixthLayer color={item.primaryColor}  />
 			</FadeTransition>
 		</Sequence>
-		<Sequence from={795} durationInFrames={1120} >
+		<Sequence from={1000} durationInFrames={1130} >
 			<SixthTitle />
 		</Sequence>
-		<Sequence from={795} durationInFrames={1120} >
+		<Sequence from={1000} durationInFrames={1130} >
 			<SixthName />
 		</Sequence>
-		<Sequence from={795} durationInFrames={1120} >
-			<SixthUserName title="ANUJAN" />
+		<Sequence from={1000} durationInFrames={1130} >
+			<SixthUserName title={item.studentFirstName}  />
 		</Sequence>
-		<Sequence from={880} durationInFrames={1030} >
+		<Sequence from={1103} durationInFrames={1030} >
 			<VideoPath video={item.coachVideo} />
 		</Sequence>
-		<Sequence from={1880} durationInFrames={40} >
+		<Sequence from={2134} durationInFrames={20} >
 		  <Palette color={item.primaryColor} />
 		</Sequence>
-		<Sequence from={1920} durationInFrames={180} >
+		<Sequence from={2155} durationInFrames={180} >
 			<FadeTransition type="in" duration={50}>
 			    <FadeTransition type="out" duration={50}>
 					<SeventhMain video={item.secondLayerVideo}  />
 				</FadeTransition>
 			</FadeTransition>
 		</Sequence>
-		<Sequence from={2100} durationInFrames={800} >
-		<Main baseBall={item.secondLayerVideo} logo={item.logo} />
+		<Sequence from={2328} durationInFrames={280} >
+						<LogoImage image={item.awardImage} logo={item.logo}  />
 		</Sequence>
-		<Sequence from={2140} durationInFrames={760} >
+		<Sequence from={2368} durationInFrames={250} >
 		<Title titleText={`${item.studentFirstName} ${item.studentLastName}`}/>
 		</Sequence>
-		<Sequence from={2180} durationInFrames={720} >
+		<Sequence from={2408} durationInFrames={200} >
 				<SubTitle titleText={item.brandName}/>
 					</Sequence>
-					<Sequence from={2190} durationInFrames={720} >
+			<Sequence from={2448} durationInFrames={40} >
 				<LastTitle  />
+					</Sequence>
+					<Sequence from={2488} durationInFrames={40} >
+				<LastTitle2  />
+					</Sequence>
+					<Sequence from={2528} durationInFrames={40} >
+				<LastTitle3  />
+					</Sequence>
+					<Sequence from={2568} durationInFrames={40} >
+				<LastTitle4  />
+					</Sequence>
+					<Sequence from={2610} durationInFrames={40} >
+				<StageClipGIf  />
 			</Sequence>
 			<Music />
 		</div>

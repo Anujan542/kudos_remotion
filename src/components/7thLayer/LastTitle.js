@@ -1,13 +1,14 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
-import Typewriter from 'typewriter-effect';
-
-// Import '../Title/Title.css';
+import {AbsoluteFill, useCurrentFrame} from 'remotion';
 
 const LastTitle = () => {
+	const frame = useCurrentFrame();
+
+	const charsShown = Math.floor(frame / 3);
+	const titleText = 'TEAMWORK.';
+	const textToShow = titleText.slice(0, charsShown);
 	return (
 		<AbsoluteFill
-			className="typewriter"
 			style={{
 				alignItems: 'center',
 				justifyContent: 'start',
@@ -21,7 +22,8 @@ const LastTitle = () => {
 					color: 'white',
 				}}
 			>
-				<Typewriter
+				{textToShow}
+				{/* <Typewriter
 					options={{
 						strings: [
 							'TEAMWORK.',
@@ -34,7 +36,7 @@ const LastTitle = () => {
 						autoStart: true,
 						loop: true,
 					}}
-				/>
+				/> */}
 			</h1>
 		</AbsoluteFill>
 	);

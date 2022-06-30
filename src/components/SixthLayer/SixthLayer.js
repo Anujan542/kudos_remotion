@@ -6,7 +6,7 @@ import React from 'react';
 import {AbsoluteFill, Video} from 'remotion';
 import video from '../../assets/vid_5.mp4';
 
-const SixthLayer = () => {
+const SixthLayer = ({color}) => {
 	const {fps, width} = useVideoConfig();
 	const frame = useCurrentFrame();
 	const transitionProgress = spring({
@@ -34,7 +34,7 @@ const SixthLayer = () => {
 						right: '0',
 						height: ' 100%',
 						width: ' 100%',
-						backgroundColor: 'red',
+						backgroundColor: color,
 						opacity: 0.5,
 					}}
 				>

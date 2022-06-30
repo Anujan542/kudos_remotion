@@ -7,7 +7,7 @@ const ForthMain = ({video, logo, sideImage, Logo1, Logo2}) => {
 	return (
 		<>
 			<Video
-				playbackRate={0.5}
+				playbackRate={0.3}
 				src={video}
 				style={{filter: 'grayscale(80%)', position: 'relative'}}
 			/>
