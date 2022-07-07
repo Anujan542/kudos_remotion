@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Img, OffthreadVideo, Video} from 'remotion';
+import {AbsoluteFill, OffthreadVideo} from 'remotion';
 
 import {LogoPath} from './Logo/LogoPath';
 

@@ -1,7 +1,3 @@
-import {interpolate} from 'remotion';
-import {spring} from 'remotion';
-import {useVideoConfig} from 'remotion';
-import {useCurrentFrame} from 'remotion';
 import {Img} from 'remotion';
 import React from 'react';
 import {AbsoluteFill} from 'remotion';

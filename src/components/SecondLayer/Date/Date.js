@@ -1,28 +1,43 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 
-const SubTitle = ({titleText}) => {
+const SubTitle = ({
+	titleText,
+	titleColor,
+	bottom,
+	size,
+	marginLeft,
+	fontWeight,
+	fontStyle,
+	time,
+}) => {
 	const frame = useCurrentFrame();
 
-	const charsShown = Math.floor(frame / 3);
+	const charsShown = Math.floor(frame / time);
 	const textToShow = titleText.slice(0, charsShown);
 	return (
 		<AbsoluteFill
 			style={{
 				alignItems: 'center',
 				justifyContent: 'start',
-				marginTop: '50rem',
+				marginLeft,
 			}}
 		>
-			<h1
+			<div
 				style={{
-					fontSize: '100px',
+					fontFamily: 'Open Sans',
+					fontSize: size,
+					titleColor,
+					fontWeight,
+					fontStyle,
+					bottom,
 					textAlign: 'center',
-					color: 'white',
+					position: 'absolute',
+					color: titleColor,
 				}}
 			>
 				{textToShow}
-			</h1>
+			</div>
 		</AbsoluteFill>
 	);
 };

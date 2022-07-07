@@ -1,35 +1,86 @@
-import { AbsoluteFill } from "remotion";
-import { interpolate } from "remotion";
-import { useCurrentFrame } from "remotion";
-import React from "react";
+// I
+import {spring} from 'remotion';
+import {
+	AbsoluteFill,
+	interpolate,
+	useCurrentFrame,
+	useVideoConfig,
+} from 'remotion';
 
-const Effect5 = ({ color }) => {
-  const frame = useCurrentFrame(); // 10
-  const opacity = interpolate(frame, [0, 80], [2, 5]);
-  return (
-    <>
-      <AbsoluteFill style={{ justifyContent: "end", alignItems: "start" }}>
-        <div
-          style={{
-            backgroundColor: `${color}`,
-            height: "100%",
-            width: "30%",
-            transform: `scale(${opacity})`,
-          }}
-        />
-      </AbsoluteFill>
-      <AbsoluteFill style={{ justifyContent: "start", alignItems: "end" }}>
-        <div
-          style={{
-            backgroundColor: `${color}`,
-            height: "100%",
-            width: "30%",
-            transform: `scale(${opacity})`,
-          }}
-        />
-      </AbsoluteFill>
-    </>
-  );
+const Effect5 = ({color}) => {
+	const LINE_X_RADIUS = 1;
+
+	const {fps, width, height} = useVideoConfig();
+	const frame = useCurrentFrame();
+	const rawProgress = spring({
+		fps,
+		frame: frame - 50,
+		config: {
+			damping: 200,
+		},
+	});
+	const progress = rawProgress + frame / 1000 - 0.1;
+	const lineProgress = spring({
+		fps,
+		frame,
+		config: {
+			damping: 200,
+		},
+	});
+	const lineExplode = spring({
+		fps,
+		frame: frame - 10,
+		config: {
+			damping: 200,
+		},
+	});
+	const LINE_Y_RADIUS = interpolate(lineExplode, [0, 1], [500, height]);
+
+	const currentStrokeWidth = interpolate(
+		lineExplode,
+		[0, 1],
+		[6, width + LINE_X_RADIUS]
+	);
+
+	const lineX =
+		Math.sin((progress * Math.PI) / 2 + Math.PI / 4) *
+			LINE_X_RADIUS *
+			lineProgress +
+		width / 2;
+
+	const lineY =
+		Math.cos((progress * Math.PI) / 2 + Math.PI / 4) *
+			LINE_Y_RADIUS *
+			lineProgress +
+		height / 2;
+
+	const line2X =
+		Math.sin((progress * Math.PI) / 2 + Math.PI + Math.PI / 4) *
+			LINE_X_RADIUS *
+			lineProgress +
+		width / 2;
+
+	const line2Y =
+		Math.cos((progress * Math.PI) / 2 + Math.PI + Math.PI / 4) *
+			LINE_Y_RADIUS *
+			lineProgress +
+		height / 2;
+
+	return (
+		<AbsoluteFill>
+			<svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
+				<path
+					d={`
+            M ${lineX - currentStrokeWidth / 2} ${lineY}
+            L ${line2X - currentStrokeWidth / 2} ${line2Y}
+            L ${line2X + currentStrokeWidth / 2} ${line2Y}
+            L ${lineX + currentStrokeWidth / 2} ${lineY}
+            `}
+					fill={`${color}`}
+				/>
+			</svg>
+		</AbsoluteFill>
+	);
 };
 
 export default Effect5;

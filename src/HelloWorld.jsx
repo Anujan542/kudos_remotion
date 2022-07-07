@@ -5,7 +5,7 @@ import { Sequence} from 'remotion';
 import FirstLayer from './components/FirstLayer/FirstLayer';
 import Main from './components/SecondLayer/Main';
 import FirstLayerEffect from './components/Effects/FirstLayerEffect';
-import FirstLayerEffect2 from './components/Effects/FirstLayerEffect2';
+import {FirstLayerEffect2} from './components/Effects/FirstLayerEffect2';
 import UnderScorePath from './components/SecondLayer/Underscore/UnderScorePath';
 import Title from './components/SecondLayer/Title/Title';
 import SubTitle from './components/SecondLayer/SubTitle/Subtitle';
@@ -52,8 +52,9 @@ import { EncourageMusic, Music } from './components/audio/Audio';
 import LastTitle2 from './components/7thLayer/LastTitle2';
 import LastTitle3 from './components/7thLayer/LastTitle3';
 import LastTitle4 from './components/7thLayer/LastTitle4';
-import StageClipGIf from './components/7thLayer/StageClipGIf';
+// Import StageClipGIf from './components/7thLayer/StageClipGIf';
 import LogoImage from './components/7thLayer/LogoImage';
+import moment from 'moment';
 
 export const HelloWorld = () => {
 
@@ -100,13 +101,34 @@ export const HelloWorld = () => {
 				<UnderScorePath color={item.primaryColor}   />
 					</Sequence>
 			<Sequence from={185} durationInFrames={116} >
-				<Title titleText={item.brandName} />
+				<Title
+					titleColor="white"
+					titleText={item.brandName}
+					bottom={400}
+					size="100px"
+					fontWeight={800}
+					time={1}
+						/>
 					</Sequence>
 			<Sequence from={203} durationInFrames={100} >
-				<SubTitle titleText={item.awardTitle} />
+				<SubTitle
+					titleColor="white"
+					titleText={item.awardTitle}
+					bottom={280}
+					size="100px"
+					fontWeight={800}
+					time={1}
+						/>
 			</Sequence>
 			<Sequence from={232} durationInFrames={70} >
-				<Date titleText="29th Jun 2022" />
+				<Date
+					titleColor="white"
+					titleText={moment().format("Do MMM  Y")}
+					bottom={160}
+					size="95px"
+					fontWeight={800}
+					time={0.5}
+				/>
 					</Sequence>
 					<Sequence from={268} durationInFrames={35}   >
 				<Effect4 />
@@ -118,20 +140,47 @@ export const HelloWorld = () => {
 				<ThirdMain video={ThirdLayer} Logo1={Logo1} Logo2={Logo2} />
 					</Sequence>
 			<Sequence from={330} durationInFrames={118} >
-				<FirstTitle titleText="PROUDLY RECOZNIZED BY:" />
+				<FirstTitle
+					titleColor="black"
+					titleText="PROUDLY RECOGNIZED BY:"
+					bottom={700}
+					size="100px"
+					weight={1000}
+						/>
 					</Sequence>
 		<Sequence from={350} durationInFrames={99} >
-				<SecondTitle titleText={item.coachName} />
+				<SecondTitle
+					titleColor="black"
+					titleText={item.coachName}
+					bottom={450}
+					size="150px"
+					weight={800}
+						/>
 		</Sequence>
 		<Sequence from={380} durationInFrames={69} >
-			 <ThirdTitle  />	
+				<ThirdTitle
+					titleColor="black"
+					titleText="AND BSN SPORTS IN COLLABORATION WITH"
+					bottom={350}
+					size="60px"
+					weight={800}
+						/>	
+					</Sequence>
+		<Sequence from={380} durationInFrames={69} >
+				<ThirdTitle
+					titleColor="black"
+					titleText="NIKE FOR GONG ABOVE AND BEYOND."
+					bottom={300}
+					size="60px"
+					weight={800}
+						/>	
 		</Sequence>
-		<Sequence from={440} durationInFrames={12} >
+		<Sequence from={420} durationInFrames={30} >
 		<Effect5 color={item.secondaryColor}  />
-					</Sequence>
-					<Sequence from={450}  durationInFrames={350} >
+			</Sequence>
+		<Sequence from={450}  durationInFrames={350} >
 		<ForthMain video={FourthVideo} logo={item.logo} sideImage={item.sideImage} Logo1={Logo1} Logo2={Logo2} />
-					</Sequence>
+		</Sequence>
 		<Sequence from={450} durationInFrames={350} >
 	    	<EncourageMusic  audioVoice={item.coachAudio} />
 		</Sequence>
@@ -183,13 +232,26 @@ export const HelloWorld = () => {
 			</FadeTransition>
 		</Sequence>
 		<Sequence from={2328} durationInFrames={280} >
-						<LogoImage image={item.awardImage} logo={item.logo}  />
+				<LogoImage image={item.awardImage} logo={item.logo}  />
 		</Sequence>
-		<Sequence from={2368} durationInFrames={250} >
-		<Title titleText={`${item.studentFirstName} ${item.studentLastName}`}/>
+		<Sequence from={2368} durationInFrames={240} >
+				<Title
+					titleColor="white"
+					titleText={`${item.studentFirstName} ${item.studentLastName}`}
+					bottom={460}
+					size="100px"
+					fontWeight={800}
+					time={1.5}/>
 		</Sequence>
 		<Sequence from={2408} durationInFrames={200} >
-				<SubTitle titleText={item.brandName}/>
+				<SubTitle
+					titleColor="white"
+					titleText={item.brandName}
+					bottom={400}
+					size="40px"
+					fontWeight={600}
+					fontStyle="italic"
+					time={1.5}/>
 					</Sequence>
 			<Sequence from={2448} durationInFrames={40} >
 				<LastTitle  />
@@ -203,9 +265,9 @@ export const HelloWorld = () => {
 					<Sequence from={2568} durationInFrames={40} >
 				<LastTitle4  />
 					</Sequence>
-					<Sequence from={2610} durationInFrames={40} >
+			{/* <Sequence from={2610} durationInFrames={80} >
 				<StageClipGIf  />
-			</Sequence>
+			</Sequence> */}
 			<Music />
 		</div>
 			))}

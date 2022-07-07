@@ -1,30 +1,12 @@
-import {interpolate} from 'remotion';
-import {spring} from 'remotion';
-import {useCurrentFrame} from 'remotion';
-import {useVideoConfig} from 'remotion';
 import React from 'react';
-import {AbsoluteFill, Video} from 'remotion';
+import {Video} from 'remotion';
 import video from '../../assets/vid_5.mp4';
 
 const SixthLayer = ({color}) => {
-	const {fps, width} = useVideoConfig();
-	const frame = useCurrentFrame();
-	const transitionProgress = spring({
-		fps,
-		frame: frame - 80,
-		config: {
-			damping: 200,
-		},
-	});
-
 	return (
 		<>
-			<div style={{position: 'relative'}}>
-				<Video
-					loop
-					src={video}
-					style={{display: 'block', width: '100%', height: 'auto'}}
-				/>
+			<div style={{position: 'static'}}>
+				<Video playbackRate={0.3} src={video} style={{marginBottom: '5rem'}} />
 				<div
 					style={{
 						position: 'absolute',
@@ -35,7 +17,7 @@ const SixthLayer = ({color}) => {
 						height: ' 100%',
 						width: ' 100%',
 						backgroundColor: color,
-						opacity: 0.5,
+						opacity: 0.3,
 					}}
 				>
 					<div />

@@ -1,31 +1,43 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
-import 'typeface-open-sans';
 
-const Title = ({titleText}) => {
+const Title = ({
+	titleText,
+	titleColor,
+	bottom,
+	size,
+	marginLeft,
+	fontWeight,
+	fontStyle,
+	time,
+}) => {
 	const frame = useCurrentFrame();
 
-	const charsShown = Math.floor(frame / 3);
+	const charsShown = Math.floor(frame / time);
 	const textToShow = titleText.slice(0, charsShown);
 	return (
 		<AbsoluteFill
 			style={{
 				alignItems: 'center',
 				justifyContent: 'start',
-				marginTop: '32rem',
+				marginLeft,
 			}}
 		>
-			<h1
+			<div
 				style={{
-					fontFamily: 'Open Sans',
-					FontWeight: '800',
-					fontSize: '100px',
+					fontFamily: 'open sans',
+					fontSize: size,
+					titleColor,
+					fontWeight,
+					fontStyle,
+					bottom,
 					textAlign: 'center',
-					color: 'white',
+					position: 'absolute',
+					color: titleColor,
 				}}
 			>
 				{textToShow}
-			</h1>
+			</div>
 		</AbsoluteFill>
 	);
 };

@@ -1,35 +1,41 @@
-import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
+import {Typography} from '@material-ui/core';
 
-const ThirdTitle = () => {
+const ThirdTitle = ({titleText, titleColor, bottom, size, weight}) => {
 	const frame = useCurrentFrame();
-	const text1 = 'AND BSN SPORTS IN COLLABOATION WITH';
-	const text2 = 'NIKE FOR GOING ABOVE AND BEYOND.';
+	const text = titleText;
+	// A new character every 3 frames
 	const charsShown = Math.floor(frame / 1);
-	const textToShow1 = text1.slice(0, charsShown);
-	const textToShow2 = text2.slice(0, charsShown);
+	const textToShow = text.slice(0, charsShown);
 	return (
-		<AbsoluteFill
-			style={{
-				alignItems: 'center',
-				justifyContent: 'center',
-				marginTop: '4rem',
-			}}
-		>
-			<h6
+		<>
+			<AbsoluteFill
 				style={{
-					fontFamily: 'SF Pro Text, Helvetica, Arial',
-					//	FontWeight: 'bold',
-					fontSize: '35px',
-					textAlign: 'center',
-					color: 'white',
+					alignItems: 'center',
+					justifyContent: 'start',
+					fontWeight: weight,
 				}}
 			>
-				{textToShow1}
-				<br />
-				{textToShow2}
-			</h6>
-		</AbsoluteFill>
+				<Typography
+					style={{
+						//		FontFamily: 'Open Sans',
+						fontWeight: weight,
+						fontSize: size,
+						textAlign: 'center',
+						position: 'absolute',
+						bottom,
+						width: '100%',
+						color: titleColor,
+						overflow: 'hidden',
+						whiteSpace: 'nowrap',
+						animation:
+							'typing 1.5s steps(30, end), blink-caret 0.5s step-end infinite',
+					}}
+				>
+					{textToShow}
+				</Typography>
+			</AbsoluteFill>
+		</>
 	);
 };
 

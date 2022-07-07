@@ -1,6 +1,5 @@
 import React from 'react';
 import {AbsoluteFill, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import bat from '../../../assets/bat.jpg';
 
 export const LogoPath = ({logo}) => {
 	const frame = useCurrentFrame();

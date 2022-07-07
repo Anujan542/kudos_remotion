@@ -15,9 +15,7 @@ const FirstLayer = ({image, logo}) => {
 				src={image}
 			/>
 
-			<div>
-				<Logo logo={logo} />
-			</div>
+			<Logo logo={logo} />
 		</AbsoluteFill>
 	);
 };

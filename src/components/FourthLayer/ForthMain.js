@@ -1,6 +1,6 @@
 import React from 'react';
-import {AbsoluteFill, Video} from 'remotion';
-import back from '../../assets/vid_2.mp4';
+import {Video} from 'remotion';
+
 import Title from './Title';
 
 const ForthMain = ({video, logo, sideImage, Logo1, Logo2}) => {

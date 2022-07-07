@@ -27,46 +27,25 @@ export const VideoPath = ({video}) => {
 	return (
 		<AbsoluteFill
 		// Style={{
-		// 	alignItems: 'end',
-		// 	justifyContent: 'start',
-		// 	marginTop: '10rem',
+		// 	alignItems: 'start',
+		// 	justifyContent: 'center',
+		// 	//		MarginTop: '10rem',
 		// }}
 		>
-			<div className="bounce-in-bottom">
-				{/* <Video
-					width="1200px"
-					height="750px"
-					src={video}
-					// Style={{border: '10px solid white'}}
-				/> */}
-				<OffthreadVideo
-					autoPlay
-					className="slide-top-remotion"
-					src={video}
-					// Width="1200px"
-					// height="750px"
-					style={{
-						maxHeight: '100%',
-						maxWidth: '30%',
-						marginLeft: '55%',
-						marginTop: '10%',
-						border: '5px solid white',
-					}}
-				/>
-				{/* <svg
-					ViewBox={`0 0 ${config.width} ${config.height}`}
-					width="1200px"
-					height="750px"
-					transform={`translate(0, ${LogoPathPostion})`}
-				>
-					<image
-						xlinkHref={video}
-						width="100%"
-						height="100%"
-						style={{border: '5px solid white'}}
-					/>
-				</svg> */}
-			</div>
+			<OffthreadVideo
+				autoPlay
+				className="bounce-in-bottom"
+				src={video}
+				// Width="1200px"
+				// height="750px"
+				style={{
+					maxHeight: '100%',
+					maxWidth: '30%',
+					marginLeft: '55%',
+					marginTop: '10%',
+					border: '5px solid white',
+				}}
+			/>
 		</AbsoluteFill>
 	);
 };
